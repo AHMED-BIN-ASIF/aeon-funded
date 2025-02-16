@@ -1,11 +1,11 @@
 import React from "react";
 import Eyebrow from "../ui/Eyebrow";
-import AboutBg from "../assets/images/about-bg.webp";
+// import AboutBg from "../assets/images/about-bg.webp";
 import Like from "../assets/icons/like.svg";
 import Rocket from "../assets/icons/rocket-icon.svg";
 import HeadPhone from "../assets/icons/headphones.svg";
 import ArrowRight from "../assets/icons/arrow-right.svg";
-import { Link } from "react-router-dom";
+import Button from "../ui/Button";
 
 const aboutCards = [
   {
@@ -33,7 +33,9 @@ const AboutSection = () => {
     <section
       className="py-32 bg-cover bg-no-repeat bg-center"
       style={{
-        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), url(${AboutBg})  0px -173.5px / 100% 145.749% no-repeat`
+        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
+        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
+        0px -173.5px / 100% 145.749% no-repeat`
       }}
     >
       <div className="container max-w-[1240px]">
@@ -65,12 +67,7 @@ const AboutSection = () => {
                     {card.description}
                   </p>
                 </div>
-                <Link
-                  to={card.link}
-                  className="bg-[rgba(0,0,0,0.10)] shadow-nav-shadow rounded-full text-sm font-inter font-medium text-white h-10 px-5 py-4 flex items-center justify-center gap-[10px]"
-                >
-                  Learn More <img src={ArrowRight} alt="arrow-right" />
-                </Link>
+                <Button to="/" text="Learn More" variant="gold" size="small" hasIcon={true} icon={ArrowRight} />
                 {/* card-lines */}
                 <div className="absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line"></div>
                 <div className="absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line"></div>

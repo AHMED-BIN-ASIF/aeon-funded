@@ -8,7 +8,7 @@ const Eyebrow = ({ imageSrc, text, theme = "white" }) => {
 
   return (
     <div
-      className={`relative h-10 flex items-center justify-center gap-2 rounded-[100px] py-4 px-5 mb-4 border border-solid bg-black ${
+      className={`relative h-10 flex items-center justify-center gap-2 rounded-[100px] py-4 px-5 mb-4 shadow-nav-shadow border border-solid max-w-max bg-black ${
         theme === "golden" ? "border-[rgba(255,204,0,0.20)]" : "border-[rgba(255,255,255,0.20)]"
       }`}>
       {imageSrc && <img src={imageSrc} alt="icon" className="h-5 w-5" />}

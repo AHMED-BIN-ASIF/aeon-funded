@@ -21,7 +21,9 @@ module.exports = {
       },
       backgroundImage: {
         'card-gradient': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.08) 100%)",
+        'card-radial': "radial-gradient(64.95% 117.28% at 71.88% 76.72%, rgba(255, 210, 33, 0.20) 0%, rgba(255, 210, 33, 0.00) 100%)",
         'card-line': "linear-gradient(90deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.60) 50%, rgba(255, 204, 0, 0.00) 100%)",
+        'review-card': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.10) 100%)",
       },
     },
   },
