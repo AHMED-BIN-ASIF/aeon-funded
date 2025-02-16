@@ -7,6 +7,7 @@ import PricingPlan from "../components/PricingPlan";
 import Secure from "../components/Secure";
 import Benifits from "../components/Benifits";
 import Reviews from "../components/Reviews";
+import JoinDiscord from "../components/JoinDiscord";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <div className="px-6">
         <Reviews />
       </div>
+      <JoinDiscord/>
     </main>
   );
 };

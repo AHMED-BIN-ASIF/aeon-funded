@@ -3,6 +3,8 @@ import Texture from "../assets/images/texture.svg";
 import Eyebrow from "../ui/Eyebrow";
 import John from "../assets/images/review-img.jpeg";
 import Star from "../assets/icons/star.svg";
+import ReviewGradient from "../assets/images/review-gradient.svg";
+
 
 const reviewCards = [
   {
@@ -106,30 +108,7 @@ const Reviews = () => {
         <img src={Texture} alt="texture" className="w-full h-full" />
       </div>
       <div className="absolute inset-0 w-full h-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1869 1265"
-          fill="none"
-        >
-          <path
-            d="M1869 1265L0.000160217 1265L5.31244e-05 40.0001C5.11931e-05 17.9087 17.9087 7.54008e-05 40 7.34695e-05L1829 -8.29298e-05C1851.09 -8.48611e-05 1869 17.9085 1869 39.9999L1869 1265Z"
-            fill="url(#paint0_radial_165_1813)"
-          />
-          <defs>
-            <radialGradient
-              id="paint0_radial_165_1813"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(934.5 1138.5) rotate(180) scale(2616.6 2089.64)"
-            >
-              <stop offset="0.3741" stop-opacity="0" />
-              <stop offset="0.6927" stop-color="#FFCC00" />
-              <stop offset="1" stop-color="white" />
-            </radialGradient>
-          </defs>
-        </svg>
+        <img src={ReviewGradient} alt="ReviewGradient" className="" />
       </div>
     </section>
   );
