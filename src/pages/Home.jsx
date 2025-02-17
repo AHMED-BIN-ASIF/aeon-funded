@@ -8,6 +8,7 @@ import Secure from "../components/Secure";
 import Benifits from "../components/Benifits";
 import Reviews from "../components/Reviews";
 import JoinDiscord from "../components/JoinDiscord";
+import Faqs from "../components/Faqs";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <div className="px-6">
         <Reviews />
       </div>
+      <Faqs />
       <JoinDiscord/>
     </main>
   );
