@@ -47,7 +47,7 @@ const Header = () => {
             <nav className={`max-w-[666px] rounded-[100px] p-[17px_30px] bg-[rgba(18,18,18,0.10)]
             shadow-nav-shadow max-xl:max-w-[580px] max-xl:p-[14px_24px] max-lg:overflow-hidden
             max-lg:absolute top-[70px]  left-0 right-0 max-lg:bg-black max-lg:max-w-full max-lg:w-full max-lg:rounded-lg transition-all ease-in-out duration-500 bg-black bg-opacity-10 lg:bg-transparent backdrop:blur-lg z-[20] lg:z-auto  ${
-              menuOpen ? "block" : "hidden "
+              menuOpen ? "max-lg:block" : "max-lg:hidden "
             }`}>
               <ul className="flex flex-col lg:flex-row items-center justify-between gap-[30px] max-xl:gap-5">
                 {navLinks.map((item, index) => (

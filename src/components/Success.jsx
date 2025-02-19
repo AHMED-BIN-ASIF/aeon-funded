@@ -18,7 +18,7 @@ const successData = [
       { text: "Total Paid out: $1.24M", highlight: true },
     ],
     image: Payout,
-    spanClass: "lg:row-span-2 md:col-span-2",
+    spanClass: "lg:row-span-2 max-lg:col-span-2 max-md:col-span-1",
     layoutClass: "flex flex-col justify-between pt-6",
     imageClass: "max-lg:w-full max-lg:object-cover"
   },
