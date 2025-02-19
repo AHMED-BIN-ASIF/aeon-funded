@@ -8,7 +8,7 @@ import Button from "../ui/Button";
 const Secure = () => {
   return (
     <section
-      className="py-[120px] bg-cover bg-no-repeat bg-center"
+      className="py-[120px] bg-cover bg-no-repeat bg-center max-xl:py-20"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
@@ -18,7 +18,7 @@ const Secure = () => {
       <div className="container max-w-[1240px]">
         <div className="text-center flex items-center flex-col">
           <Eyebrow text="Secure" />
-          <h2 className="text-white text-[50px] leading-relaxed font-semibold tracking-[-0.5px]">
+          <h2 className="text-white text-[50px] leading-relaxed font-semibold tracking-[-0.5px] max-lg:text-4xl">
             Instant and Secure Payouts
           </h2>
           <p className="text-sm leading-[1.71] text-ivoryTint max-w-[644px] mx-auto mt-[10px]">
@@ -26,7 +26,8 @@ const Secure = () => {
             process.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6 mt-[60px]">
+        <div className="grid grid-cols-2 gap-6 mt-[60px]
+        max-lg:grid-cols-1">
           <div
             className={`bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset `}
           >
@@ -74,7 +75,7 @@ const Secure = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-[10px] mt-11 items-center justify-center">
+        <div className="flex gap-[10px] mt-11 items-center justify-center flex-wrap">
               <Button to="/" text="Get Funded" />
               <Button
                 to="/"

@@ -31,7 +31,7 @@ const aboutCards = [
 const AboutSection = () => {
   return (
     <section
-      className="py-32 bg-cover bg-no-repeat bg-center"
+      className="py-32 bg-cover bg-no-repeat bg-center max-xl:pt-28 max-xl:pb-[80px]"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
@@ -41,14 +41,16 @@ const AboutSection = () => {
       <div className="container max-w-[1240px]">
         <div className="text-center max-w-[520px] mx-auto flex items-center flex-col">
           <Eyebrow text="Why us" theme="white" />
-          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]">
+          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
+          max-lg:text-4xl">
             Why Trade with <span className="text-primary">A</span>EON?
           </h2>
           <p className="text-sm leading-[1.71] text-ivoryTint max-w-[450px] mx-auto mt-[10px]">
           Trade with our capital, keep up to 95% of the profits, and maximize your earnings with zero risk to your funds!
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-6 mt-[60px]">
+        <div className="grid grid-cols-3 gap-6 mt-[60px]
+        max-lg:grid-cols-2 max-md:grid-cols-1">
           {aboutCards.map((card, index) => (
             <div
               key={index}

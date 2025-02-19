@@ -10,7 +10,7 @@ const successData = [
   {
     title: 1240000,
     suffix: "+",
-    bodyClass: "px-6",
+    bodyClass: "px-6 max-lg:w-full",
     description:
       "The total amount of money paid out to traders over time, showcasing overall earnings.",
     extraInfo: [
@@ -18,8 +18,9 @@ const successData = [
       { text: "Total Paid out: $1.24M", highlight: true },
     ],
     image: Payout,
-    spanClass: "row-span-2",
+    spanClass: "lg:row-span-2 md:col-span-2",
     layoutClass: "flex flex-col justify-between pt-6",
+    imageClass: "max-lg:w-full max-lg:object-cover"
   },
   {
     title: 18821,
@@ -43,7 +44,7 @@ const successData = [
 const Success = () => {
   return (
     <section
-      className="py-[120px]"
+      className="py-[120px] max-xl:py-[80px] "
       style={{
         background: `
             radial-gradient(150.94% 139.8% at 60.26% 151.92%, rgba(0, 0, 0, 0.00) 0%, #000 100%),
@@ -54,14 +55,16 @@ const Success = () => {
       <div className="container max-w-[1240px]">
         <div className="text-center max-w-[842px] mx-auto flex items-center flex-col">
           <Eyebrow text="Success" />
-          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]">
+          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
+          max-lg:text-4xl">
             Trading <span className="text-primary">Success</span> in Numbers
           </h2>
           <p className="text-sm leading-[1.71] text-ivoryTint max-w-[540px] mx-auto mt-[10px]">
             A dynamic community where traders grow, earn, and succeed. See real results and take your trading journey to the next level.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6 mt-[60px]">
+        <div className="grid grid-cols-2 gap-6 mt-[60px]
+        max-md:grid-cols-1">
           {successData.map((data, index) => (
             <SuccessCard key={index} {...data} />
           ))}
@@ -88,9 +91,9 @@ const SuccessCard = ({ title, suffix, prefix, bodyClass, description, extraInfo,
             </h4>
             <p className="text-ivoryTint text-sm leading-[1.7] font-inter">{description}</p>
           </div>
-          <div className="">
+          <div className="max-lg:w-full">
             {extraInfo && (
-              <div className="flex gap-2 mt-4 -mb-4 px-6">
+              <div className="flex gap-2 mt-4 -mb-4 px-6 max-xl:mb-0">
                 {extraInfo.map((info, index) => (
                   <div
                     key={index}

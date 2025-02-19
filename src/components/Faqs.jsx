@@ -34,7 +34,7 @@ const Faqs = () => {
 
   return (
     <section
-      className="p-[120px]"
+      className="py-[120px] max-xl:py-20"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
@@ -42,10 +42,12 @@ const Faqs = () => {
       }}
     >
       <div className="container max-w-[1240px]">
-        <div className="grid grid-cols-[.65fr_1fr] gap-5 items-center">
-          <div>
+        <div className="grid grid-cols-[.65fr_1fr] gap-5 items-center
+        max-lg:grid-cols-1">
+          <div className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
             <Eyebrow text="FAQ" />
-            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]">
+            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px] 
+            max-lg:text-4xl">
               Frequently Asked Questions
             </h2>
             <p className="text-sm leading-[1.71] text-ivoryTint max-w-[344px] mt-[10px]">
@@ -57,7 +59,8 @@ const Faqs = () => {
             {faqsData.map((faq, index) => (
               <div
                 key={index}
-                className="rounded-[20px] p-8 border border-solid border-[rgba(255,255,255,0.20)] flex flex-col justify-between items-start"
+                className="rounded-[20px] p-8 border border-solid border-[rgba(255,255,255,0.20)] flex flex-col justify-between items-start
+                max-lg:p-5"
                 style={{
                   background: "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.04) 100%), rgba(0, 0, 0, 0.20)"
                 }}

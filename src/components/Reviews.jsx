@@ -53,7 +53,7 @@ const reviewCards = [
 const Reviews = () => {
   return (
     <section
-      className="relative py-[120px]  rounded-[40px_40px_0_0] overflow-hidden"
+      className="relative py-[120px]  rounded-[40px_40px_0_0] overflow-hidden max-xl:py-24"
       // style={{
       //   background:
       //     "radial-gradient(165.19% 140% at 50% 10%, rgba(0, 0, 0, 0.00) 37.41%, #FC0 69.27%, #FFF 100%)",
@@ -62,21 +62,25 @@ const Reviews = () => {
       <div className="container max-w-[1240px] relative z-[3]">
             <div className="text-center flex flex-col justify-center items-center">
             <Eyebrow text="Reviews" />
-            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]">
+            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]
+            max-lg:text-4xl">
             Our Happy Customers
             </h2>
             <p className="text-sm leading-[1.71] text-ivoryTint max-w-[350px]  mx-auto mt-[10px]">
             Get paid quickly and securely with a smooth and reliable payout process.
             </p>
             </div>
-            <div className="grid grid-cols-3 gap-6 mt-[60px]">
+            <div className="grid grid-cols-3 gap-6 mt-[60px]
+            max-lg:grid-cols-2
+            max-md:grid-cols-1">
             {reviewCards.map((card, index) => (
             <div
               key={index}
               className="bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset"
             >
               <div
-                className="relative p-8 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start bg-review-card">
+                className="relative p-8 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start bg-review-card
+                max-xl:p-5">
                 <div>
                   <div className="rounded-full w-[50px] h-[50px] overflow-hidden shadow-[2px_4px_24px_0px_rgba(255,204,0,0.30)]">
                     <img src={card.img} alt={card.name} className="w-full h-full object-cover" />

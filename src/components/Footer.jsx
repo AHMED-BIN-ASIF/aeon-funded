@@ -21,22 +21,22 @@ const navLinks = [
   { name: 'Challenges', path: '/challenges' },
   { name: 'How It Works', path: '/how-it-works' },
   { name: 'Affiliate Program', path: '/affiliate-program' },
-  { name: 'FAQ', path: '/faq' },
+  { name: 'FAQ', path: '#faq' },
 ];
 
 const Footer = () => {
   return (
-    <footer className="relative py-[60px]">
+    <footer className="relative py-[60px] max-lg:py-10">
       <div className="container max-w-[982px] relative z-[5]">
-        <div className="flex gap-8 items-center">
-          <img src={Line} alt="line" />
-          <Link to="/">
+        <div className="flex gap-8 items-center justify-between">
+          <img src={Line} alt="line"  className="w-[40%] max-md:w-[30%]" />
+          <Link to="/" className="min-w-24 max-lg:min-w-16">
             <img src={FooterBrand} alt="AEON" />
           </Link>
-          <img src={Line} alt="line" className="rotate-180" />
+          <img src={Line} alt="line" className="rotate-180 w-[40%] max-md:w-[30%]" />
         </div>
 
-        <ul className="flex items-center mt-10 mb-8 gap-[10px] justify-center">
+        <ul className="flex items-center mt-10 mb-8 gap-[10px] justify-center max-md:flex-col">
           {navLinks.map((nav, index) => (
             <li key={index}>
               <Link to={nav.path} className="text-ivoryTint font-inter opacity-80 p-[10px]">{nav.name}</Link>
@@ -51,7 +51,7 @@ const Footer = () => {
                 href={social.link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-[rgba(255,204,0,0.04)] shadow-icon-border text-primary text-2xl"
+                className="p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-[rgba(255,204,0,0.04)] shadow-icon-border text-primary text-2xl max-lg:flex-wrap"
               >
                 {social.icon}
               </Link>

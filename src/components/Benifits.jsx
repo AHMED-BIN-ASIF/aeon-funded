@@ -51,7 +51,7 @@ const benifitsCards = [
 const Benifits = () => {
   return (
     <section
-      className="py-32 bg-cover bg-no-repeat bg-center"
+      className="py-32 bg-cover bg-no-repeat bg-center max-xl:py-24"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
@@ -61,14 +61,16 @@ const Benifits = () => {
       <div className="container max-w-[1240px]">
         <div className="text-center flex items-center flex-col">
           <Eyebrow text="Benefit"  />
-          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]">
+          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
+          max-lg:text-4xl">
           Why Traders Love <span className="text-primary">A</span>EON?
           </h2>
           <p className="text-sm leading-[1.71] text-ivoryTint max-w-[350px] mx-auto mt-[10px]">
           Get paid quickly and securely with a smooth and reliable payout process.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-6 mt-[60px]">
+        <div className="grid grid-cols-3 gap-6 mt-[60px]
+        max-lg:grid-cols-2 max-md:grid-cols-1">
           {benifitsCards.map((card, index) => (
             <div
               key={index}

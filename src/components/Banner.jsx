@@ -9,16 +9,14 @@ const Banner = () => {
   return (
     <section
       className="relative pt-[175px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden"
-      // style={{
-      //   background:
-      //     "radial-gradient(165.19% 140% at 50% 10%, rgba(0, 0, 0, 0.00) 37.41%, #FC0 120.27%, #FFF 100%)",
-      // }}
     >
       <div className="container max-w-[1642px] relative z-[3]">
-        <div className="grid grid-cols-2 items-center gap-10">
+        <div className="grid grid-cols-2 items-center gap-10
+        max-xl:gap-7 max-lg:grid-cols-1">
           <div className="flex flex-col items-start">
           <Eyebrow imageSrc={Star} text="Rated 10/10 From 1000+ Users" theme="golden" />
-            <h1 className="text-white text-[80px] font-semibold leading-[1.12] tracking-[-1.6px]">
+            <h1 className="text-[80px] font-semibold leading-[1.12] tracking-[-1.6px] text-white 
+            max-xl:text-[56px] max-lg:text-4xl">
               Launch Your <span className="text-primary">Success</span> with Our
               Capital
             </h1>
@@ -34,7 +32,7 @@ const Banner = () => {
             </Link>
           </div>
           <div>
-            <img src={Cube} alt="cube-img" />
+            <img src={Cube} alt="cube-img" className="max-lg:mx-auto max-lg:max-h-[400px]" />
           </div>
         </div>
       </div>
