@@ -20,7 +20,7 @@ function App() {
   };
   return (
     <Router>
-      <Header />
+      <Header mode={mode} />
       <div className={mode}>
         <AppRoutes />
       </div>

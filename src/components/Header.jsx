@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Brand from "../assets/images/brand.svg";
+import BrandLight from "../assets/images/brand-light.svg";
 
-const Header = () => {
+const Header = ({mode}) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -19,8 +20,8 @@ const Header = () => {
       <div className="container max-w-[1832px]">
         <div className="flex items-center justify-between gap-5 xl:gap-[60px]">
           {/* Brand */}
-          <Link to="/" className="max-w-[134px]">
-            <img src={Brand} alt="Aeon Funding Brand" />
+          <Link to="/" className="max-w-[134px] h-16 flex items-center">
+            <img src={`${mode=== 'dark' ? Brand : BrandLight}`} alt="Aeon Funding Brand" />
           </Link>
           {/* Hamburger Button - Appears at lg */}
           <button
@@ -44,9 +45,12 @@ const Header = () => {
             ></div>
           </button>
           {/* Main Navigation */}
-            <nav className={`max-w-[666px] rounded-[100px] p-[17px_30px] bg-[rgba(18,18,18,0.10)]
-            shadow-nav-shadow max-xl:max-w-[580px] max-xl:p-[14px_24px] max-lg:overflow-hidden
-            max-lg:absolute top-[70px]  left-0 right-0 max-lg:bg-black max-lg:max-w-full max-lg:w-full max-lg:rounded-lg transition-all ease-in-out duration-500 bg-black bg-opacity-10 lg:bg-transparent backdrop:blur-lg z-[20] lg:z-auto  ${
+            <nav className={`${mode === 'dark'?"max-lg:bg-black shadow-nav-shadow":""}
+            max-w-[666px] rounded-[100px] p-[17px_30px] bg-[rgba(18,18,18,0.10)]
+            max-xl:max-w-[580px] max-xl:p-[14px_24px] max-lg:overflow-hidden
+            max-lg:absolute top-[70px]  left-0 right-0 max-lg:max-w-full max-lg:w-full 
+            max-lg:rounded-lg transition-all ease-in-out duration-500 backdrop:blur-lg z-[20] lg:z-auto  
+            ${
               menuOpen ? "max-lg:block" : "max-lg:hidden "
             }`}>
               <ul className="flex flex-col lg:flex-row items-center justify-between gap-[30px] max-xl:gap-5">
@@ -54,7 +58,7 @@ const Header = () => {
                   <li key={index}>
                     <Link
                       to={item.path}
-                      className="text-sm xl:text-base leading-normal font-normal text-white font-inter"
+                      className={`text-sm xl:text-base leading-normal font-normal font-inter ${mode=== 'dark'? 'text-white': 'dark1f'}`}
                       onClick={() => setMenuOpen(false)}
                     >
                       {item.name}
@@ -80,13 +84,15 @@ const Header = () => {
             <div className="hidden lg:flex flex-col lg:flex-row items-center gap-[14px] ">
             <Link
                   to="/"
-                  className="btn bg-[#FFD221] font-inter font-medium leading-none shadow-nav-shadow rounded-[100px] text-black h-10 px-5 py-4 flex items-center justify-center"
+                  className={`btn font-inter font-medium leading-none rounded-[100px] h-10 px-5 py-4 flex items-center justify-center
+                  ${mode=== 'dark'? 'bg-[#FFD221]  text-black shadow-nav-shadow': 'bg-black text-white'}`}
                 >
                   Get Funded
                 </Link>
             <Link
                   to="/"
-                  className="btn bg-[rgba(255,255,255,0.10)] font-inter font-medium leading-none shadow-nav-shadow rounded-[100px] text-white h-10 px-5 py-4 flex items-center justify-center"
+                  className={`btn font-inter font-medium leading-none rounded-[100px]  h-10 px-5 py-4 flex items-center justify-center
+                    ${mode=== 'dark'? 'bg-[rgba(255,255,255,0.10)] text-white  shadow-nav-shadow': 'text-black'}`}
                 >
                   Log In
                 </Link>

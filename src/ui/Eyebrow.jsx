@@ -12,7 +12,7 @@ const Eyebrow = ({ imageSrc, text, theme = "white" }) => {
         theme === "golden" ? "border-[rgba(255,204,0,0.20)]" : "border-[rgba(255,255,255,0.20)]"
       }`}>
       {imageSrc && <img src={imageSrc} alt="icon" className="h-5 w-5" />}
-      <span className={`text-base font-inter text-[#ECECFB]`}>{text}</span>
+      <span className={`text-base max-md:text-sm font-inter text-[#ECECFB]`}>{text}</span>
       <div className="absolute inset-[-1px_0_auto] mx-auto h-[1px] w-[60%] z-1" style={{ background: gradientBg }}></div>
     </div>
   );

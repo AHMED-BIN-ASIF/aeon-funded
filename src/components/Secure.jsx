@@ -8,7 +8,7 @@ import Button from "../ui/Button";
 const Secure = () => {
   return (
     <section
-      className="py-[120px] bg-cover bg-no-repeat bg-center max-xl:py-20"
+      className="py-[120px] bg-cover bg-no-repeat bg-center max-xl:py-20 max-md:py-10"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  

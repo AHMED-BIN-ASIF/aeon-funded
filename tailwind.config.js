@@ -15,6 +15,7 @@ module.exports = {
         ivoryTint: '#FBF6EC', // text colors for para
         darkBg: '#000', // Background for dark sections
         dark121: '#121212', // Background for dark sections
+        dark1f: '#1F1F1F', // Background for dark sections
       },
       boxShadow: {
         'nav-shadow': '0px 8.867px 9.458px 0px rgba(0, 0, 0, 0.10), 0px 0.637px 3.821px 0px rgba(255, 255, 255, 0.25) inset',

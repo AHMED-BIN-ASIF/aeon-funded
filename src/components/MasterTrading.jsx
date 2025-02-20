@@ -1,0 +1,73 @@
+import React from "react";
+import Eyebrow from "../ui/Eyebrow";
+import Button from "../ui/Button";
+import CountUp from "react-countup";
+
+const MasterTrading = () => {
+  return (
+    <section
+      className="pt-[205px] pb-[120px] max-xl:pt-36 max-xl:pb-20 max-md:py-10"
+      style={{
+        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
+        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
+        0px -173.5px / 100% 145.749% no-repeat`,
+      }}
+    >
+      <div className="container max-w-[1240px]">
+        <div
+          className="grid grid-cols-[.9fr_1fr] gap-20 items-center
+        max-xl:gap-14 max-lg:gap-9 max-lg:grid-cols-1"
+        >
+          <div className="max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center ">
+            <Eyebrow text="Professional Trading Platform" />
+            <h2
+              className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]
+            max-lg:text-4xl"
+            >
+              Master Trading & Get Funded
+            </h2>
+            <p className="text-sm leading-[1.71] text-ivoryTint  mx-auto mt-[10px]">
+              Join elite traders in our advanced funding program. Prove yiyrs
+              skills, access substantial capital, and trade with confidence..
+            </p>
+            <div className="flex gap-[10px] mt-8 max-lg:justify-center">
+              <Button to="/" text="Start Trading" />
+            </div>
+          </div>
+          <div
+            className={`bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset }`}
+          >
+            <div
+              className={`relative h-full p-8 rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col   gap-8 overflow-hidden bg-card-radial`}
+              style={{ backdropFilter: "blur(7.5px)" }}
+            >
+                <div className="flex items-center justify-between w-full  font-inter">
+                    <h3 className="text-2xl font-semibold">Trading Challenge</h3>
+                  <span className="text-[12px] font-bold relative h-8 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-[14px] px-5 border-solid border border-[rgba(255,204,0,0.10)] bg-[rgba(255,204,0,0.10)] text-[#fc0] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.00)_inset]">
+                    Success
+                  </span>
+                </div>
+              <div className={` font-inter`}>
+                <span className="text-ivoryTint opacity-60 text-sm">Current Progress</span>
+                <div className="flex justify-between items-center mt-4">
+                <span
+                  className={`text-[28px] leading-tight font-semibold`}
+                >
+                  $
+                  <CountUp end={"27000"} duration={4} separator="," />
+                </span>
+                <span className={`text-[28px] leading-tight font-semibold`}>
+                  80%
+                <span className="text-ivoryTint opacity-60 text-sm ms-1">Complete</span>
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MasterTrading;

@@ -44,7 +44,7 @@ const successData = [
 const Success = () => {
   return (
     <section
-      className="py-[120px] max-xl:py-[80px] "
+      className="py-[120px] max-xl:py-[80px]  max-md:py-10"
       style={{
         background: `
             radial-gradient(150.94% 139.8% at 60.26% 151.92%, rgba(0, 0, 0, 0.00) 0%, #000 100%),

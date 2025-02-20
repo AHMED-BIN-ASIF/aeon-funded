@@ -32,7 +32,7 @@ const aboutCards = [
 const HowitWorks = () => {
   return (
     <section
-      className="pt-[205px] pb-[120px] max-xl:pt-36 max-xl:pb-20"
+      className="pt-[205px] pb-[120px] max-xl:pt-36 max-xl:pb-20 max-md:py-10"
       style={{
         background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
         linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  

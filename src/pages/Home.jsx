@@ -13,7 +13,7 @@ import Faqs from "../components/Faqs";
 const Home = () => {
   return (
     <main>
-      <div className="px-6">
+      <div className="px-6 max-md:px-4">
         <Banner />
       </div>
       <AboutSection />
@@ -22,7 +22,7 @@ const Home = () => {
       <PricingPlan />
       <Secure />
       <Benifits />
-      <div className="px-6">
+      <div className="px-6 max-md:px-4">
         <Reviews />
       </div>
       <Faqs />

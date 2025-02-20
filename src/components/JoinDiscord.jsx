@@ -14,7 +14,7 @@ const JoinDiscord = () => {
                 <img src={Skill} alt="skill" className="bg-primary p-[2px] rounded-[6px] w-8 h-8 mb-4" />
                 <Eyebrow text="Discord" />
                 <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
-                max-lg:text-4xl">
+                max-lg:text-4xl max-md:text-3xl">
                 Make Waves In Trading
                 </h2>
                 <p className="text-sm leading-[1.71] text-ivoryTint max-w-[644px] mx-auto mt-[10px] mb-[32px] max-lg:mb-6">
