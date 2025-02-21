@@ -2,6 +2,7 @@ import React from "react";
 import Eyebrow from "../ui/Eyebrow";
 import Button from "../ui/Button";
 import CountUp from "react-countup";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const MasterTrading = () => {
   return (
@@ -38,30 +39,81 @@ const MasterTrading = () => {
             className={`bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset }`}
           >
             <div
-              className={`relative h-full p-8 rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col   gap-8 overflow-hidden bg-card-radial`}
+              className={`relative h-full p-8 rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-8  bg-card-radial`}
               style={{ backdropFilter: "blur(7.5px)" }}
             >
-                <div className="flex items-center justify-between w-full  font-inter">
-                    <h3 className="text-2xl font-semibold">Trading Challenge</h3>
-                  <span className="text-[12px] font-bold relative h-8 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-[14px] px-5 border-solid border border-[rgba(255,204,0,0.10)] bg-[rgba(255,204,0,0.10)] text-[#fc0] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.00)_inset]">
-                    Success
+              <div className="flex items-center justify-between w-full  font-inter">
+                <h3 className="text-2xl font-semibold">Trading Challenge</h3>
+                <span className="text-[12px] font-bold relative h-8 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-[14px] px-5 border-solid border border-[rgba(255,204,0,0.10)] bg-[rgba(255,204,0,0.10)] text-[#fc0] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.00)_inset]">
+                  Success
+                </span>
+              </div>
+              <div className={` font-inter`}>
+                <span className="text-ivoryTint opacity-60 text-sm">
+                  Current Progress
+                </span>
+                <div className="flex justify-between items-center mt-4">
+                  <span className={`text-[28px] leading-tight font-semibold`}>
+                    $
+                    <CountUp end={"27000"} duration={4} separator="," />
+                  </span>
+                  <span className={`text-[28px] leading-tight font-semibold`}>
+                    80%
+                    <span className="text-ivoryTint opacity-60 text-sm ms-1">
+                      Complete
+                    </span>
                   </span>
                 </div>
-              <div className={` font-inter`}>
-                <span className="text-ivoryTint opacity-60 text-sm">Current Progress</span>
-                <div className="flex justify-between items-center mt-4">
-                <span
-                  className={`text-[28px] leading-tight font-semibold`}
-                >
-                  $
-                  <CountUp end={"27000"} duration={4} separator="," />
+                <ProgressBar
+                    completed={80}
+                    className="bg-[rgba(255,255,255,0.10)]  rounded-[100px]"
+                    barContainerClassName=" rounded-[100px] h-[10px] mt-2.5"
+                    completedClassName="bg-[#fc0] w-[70%] h-[10px] rounded-[100px]"
+                    labelClassName="hidden"
+                    transitionDuration="2s"
+                    animateOnRender={true}
+                    />
+              </div>
+              <div className="grid grid-cols-2 gap-2.5 font-inter max-md:grid-cols-1">
+                <div className="p-4 rounded-[10px] border border-[rgba(255,255,255,0.10)] bg-[rgba(5,5,5,0.40)]">
+                <span className="text-ivoryTint opacity-60 text-sm mb-4 block">
+                  Current Progress
                 </span>
-                <span className={`text-[28px] leading-tight font-semibold`}>
-                  80%
-                <span className="text-ivoryTint opacity-60 text-sm ms-1">Complete</span>
+                <span className={`text-[20px] leading-tight font-semibold`}>
+                    $
+                    <CountUp end={"1850"} duration={4} separator="," />
+                  </span>
+                  <ProgressBar
+                    completed={60}
+                    className="bg-[rgba(255,255,255,0.10)]  rounded-[100px]"
+                    barContainerClassName=" rounded-[100px] h-[6px] mt-2.5"
+                    completedClassName="bg-[#fc0] w-[60%] h-[6px] rounded-[100px]"
+                    labelClassName="hidden"
+                    transitionDuration="2s"
+                    animateOnRender={true}
+                    />
+                </div>
+                <div className="p-4 rounded-[10px] border border-[rgba(255,255,255,0.10)] bg-[rgba(5,5,5,0.40)]">
+                <span className="text-ivoryTint opacity-60 text-sm mb-4 block">
+                Total Drawdown
                 </span>
+                <span className={`text-[20px] leading-tight font-semibold`}>
+                    $
+                    <CountUp end={"8150"} duration={4} separator="," />
+                  </span>
+                  <ProgressBar
+                    completed={60}
+                    className="bg-[rgba(255,255,255,0.10)]  rounded-[100px]"
+                    barContainerClassName=" rounded-[100px] h-[6px] mt-2.5"
+                    completedClassName="bg-[#fc0] w-[60%] h-[6px] rounded-[100px]"
+                    labelClassName="hidden"
+                    transitionDuration="2s"
+                    animateOnRender={true}
+                    />
                 </div>
               </div>
+              <div className="absolute top-[-1px] right-0 left-0 mx-auto w-[60%] h-[1px] bg-card-line"></div>
+                <div className="absolute bottom-[-1px] left-0 right-0 mx-auto w-[60%] h-[1px] bg-card-line"></div>
             </div>
           </div>
         </div>

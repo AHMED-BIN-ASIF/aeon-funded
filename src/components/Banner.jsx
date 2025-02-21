@@ -2,46 +2,60 @@ import React from "react";
 import Star from "../assets/icons/star.svg";
 import Cube from "../assets/images/cube.webp";
 import Texture from "../assets/images/texture.svg";
+import TextureBlack from "../assets/images/texture-black.svg";
 import BannerGradient from "../assets/images/banner-gradient.svg";
 import { Link } from "react-router-dom";
 import Eyebrow from "../ui/Eyebrow";
-const Banner = () => {
+
+const Banner = ({mode}) => {
+
   return (
     <section
       className="relative pt-[175px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden"
+      style={{
+        background: mode==='dark'
+          ? ""
+          : "radial-gradient(165.19% 140% at 50% 10%, rgba(255, 255, 255, 0.00) 37.41%, #000 69.27%, #000 100%)",
+      }}
     >
       <div className="container max-w-[1642px] relative z-[3]">
-        <div className="grid grid-cols-2 items-center gap-10
-        max-xl:gap-7 max-lg:grid-cols-1">
+        <div className="grid grid-cols-2 items-center gap-10 max-xl:gap-7 max-lg:grid-cols-1">
           <div className="flex flex-col items-start">
-          <Eyebrow imageSrc={Star} text="Rated 10/10 From 1000+ Users" theme="golden" />
-            <h1 className="text-[80px] font-semibold leading-[1.12] tracking-[-1.6px] text-white 
-            max-xl:text-[56px] max-lg:text-4xl">
-              Launch Your <span className="text-primary">Success</span> with Our
+            <Eyebrow imageSrc={Star} text="Rated 10/10 From 1000+ Users" theme={`${mode==='dark'? 'golden' : 'light'}`} />
+            <h1
+              className={`text-[80px] font-semibold leading-[1.12] tracking-[-1.6px]  max-xl:text-[56px] max-lg:text-4xl ${
+                mode==='dark' ? "text-white" : "text-dark1f"
+              }`}
+            >
+              Launch Your <span className={mode==='dark' ? "text-primary" : "text-black"}>Success</span> with Our
               Capital
             </h1>
-            <p className="text-base text-[#FBF6EC] m-[16px_0_32px] max-w-[513px]">
-              Trade with our capital, keep up to 95% of the profits, and
-              maximize your earnings with zero risk to your funds!
+            <p
+              className={`text-base m-[16px_0_32px] max-w-[513px] ${
+                mode==='dark' ? "text-ivoryTint" : "text-dark1f"
+              }`}
+            >
+              Trade with our capital, keep up to 95% of the profits, and maximize your earnings with zero risk to your funds!
             </p>
             <Link
               to="/"
-              className="btn bg-white text-[16px] font-inter font-medium leading-none shadow-nav-shadow rounded-[100px] text-black h-10 px-8 py-4 flex items-center justify-center"
+              className={`btn  text-[16px] font-inter font-medium leading-none rounded-[100px] h-10 px-8 py-4 flex items-center justify-center
+                ${mode==='dark' ? 'bg-white shadow-nav-shadow text-black': ' bg-black text-white'}`}
             >
               Get Funded
             </Link>
           </div>
           <div>
-            <img src={Cube} alt="cube-img" className="max-lg:mx-auto max-lg:max-h-[400px]" />
+            <img src={Cube} alt="cube-img" className={`max-lg:mx-auto max-lg:max-h-[400px] ${mode === 'dark' ? '' : 'filter grayscale'}`} />
           </div>
         </div>
       </div>
       <div className="absolute inset-0 w-full h-full">
-        <img src={Texture} alt="texture" className="w-full h-full" />
+        <img src={`${mode === "dark" ? Texture : TextureBlack}`} alt="texture" className="w-full h-full" />
       </div>
-      <div className="absolute inset-0 w-full h-full">
-      <img src={BannerGradient} alt="BannerGradient" className="w-full h-full object-cover object-bottom " />
-      </div>
+        <div className={`absolute inset-0 w-full h-full ${mode=== 'dark' ? 'opacity-100' :'opacity-0'}`}>
+          <img src={BannerGradient} alt="BannerGradient" className="w-full h-full object-cover object-bottom" />
+        </div>
     </section>
   );
 };

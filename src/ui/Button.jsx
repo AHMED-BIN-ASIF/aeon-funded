@@ -7,6 +7,7 @@ const Button = ({ to, text, variant = "white", size = "normal", hasIcon = false,
   const variants = {
     white: "bg-white text-black",
     gold: "bg-[rgba(0,0,0,0.10)] text-white", // Light gold
+    light: "bg-[rgba(0,0,0,0.10)] text-dark1f", // Light gold
   };
   const sizes = {
     small: "text-sm px-5", // Light gold

@@ -28,24 +28,23 @@ const aboutCards = [
   },
 ];
 
-const AboutSection = () => {
+const AboutSection = ({mode}) => {
   return (
     <section
       className="py-32 bg-cover bg-no-repeat bg-center max-xl:pt-28 max-xl:pb-[80px]"
       style={{
-        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
-        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
-        0px -173.5px / 100% 145.749% no-repeat`
+        background: mode==='dark' ? "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -173.5px / 100% 145.749% no-repeat" : "",
       }}
     >
       <div className="container max-w-[1240px]">
         <div className="text-center max-w-[520px] mx-auto flex items-center flex-col">
           <Eyebrow text="Why us" theme="white" />
-          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
-          max-lg:text-4xl">
-            Why Trade with <span className="text-primary">A</span>EON?
+          <h2 className={` text-[50px] leading-none font-semibold tracking-[-0.5px]
+          max-lg:text-4xl ${mode==='dark'? 'text-white':'text-dark1f'}`}>
+            Why Trade with <span className={`${mode==='dark'? 'text-primary':'text-dark1f'}`}>A</span>EON?
           </h2>
-          <p className="text-sm leading-[1.71] text-ivoryTint max-w-[450px] mx-auto mt-[10px]">
+          <p className={`text-sm leading-[1.71] max-w-[450px] mx-auto mt-[10px]
+          ${mode==='dark'? 'text-ivoryTint':'text-dark1f opacity-80'}`}>
           Trade with our capital, keep up to 95% of the profits, and maximize your earnings with zero risk to your funds!
           </p>
         </div>
@@ -54,22 +53,27 @@ const AboutSection = () => {
           {aboutCards.map((card, index) => (
             <div
               key={index}
-              className="bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset"
+              className={` p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset
+                ${mode==='dark' ? 'bg-black' : 'bg-[#F1F1F1]'}`}
             >
               <div
-                className="relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start bg-card-gradient">
+                className={`relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start 
+                ${mode==='dark' ? 'bg-black bg-card-gradient': 'bg-white'}`}>
                 <div>
-                  <div className="p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-[rgba(255,204,0,0.04)] shadow-icon-border">
-                    <img src={card.icon} alt={card.title} />
+                  <div className={`p-3 flex items-center justify-center rounded-full w-[50px] h-[50px]
+                    ${mode==='dark'? 'bg-[rgba(255,204,0,0.04)] shadow-icon-border': 'bg-[rgba(31,31,31,0.04)] shadow-icon-light'}`}>
+                    <img src={card.icon} alt={card.title} className={`${mode === 'dark' ? '' : 'filter invert'}`} />
                   </div>
-                  <h4 className="text-white text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]">
+                  <h4 className={` text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]
+                    ${mode==='dark' ? 'text-white' : 'text-dark1f'}`}>
                     {card.title}
                   </h4>
-                  <p className="text-ivoryTint text-sm leading-[1.7] font-inter">
+                  <p className={`text-sm leading-[1.7] font-inter
+                  ${mode==='dark' ? 'text-ivoryTint' : 'text-dark1f opacity-80'}`}>
                     {card.description}
                   </p>
                 </div>
-                <Button to="/" text="Learn More" variant="gold" size="small" hasIcon={true} icon={ArrowRight} />
+                <Button to="/" text="Learn More" variant={`${mode==='dark'? 'gold': 'light'}`} size="small" hasIcon={true} icon={ArrowRight} />
                 {/* card-lines */}
                 <div className="absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line"></div>
                 <div className="absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line"></div>

@@ -6,9 +6,9 @@ import goldenScale from '../assets/images/scale.webp'
 
 const TradeConfidence = () => {
   return (
-    <section className='py-[120px] mb-10 relative rounded-[40px] overflow-hidden'>
+    <section className='py-[120px] mb-10 relative rounded-[40px] overflow-hidden max-xl:py-20 max-lg:py-16 max-md:py-10'>
       <div className="container max-w-[1192px]">
-        <div className="grid lg:grid-cols-2 items-center gap-40 relative z-[3]">
+        <div className="grid lg:grid-cols-2 items-center gap-40 max-xl:gap-20 maxlg:gap-16 max-md:gap-6 relative z-[3]">
         <div className="">
             <Eyebrow text="Scale" />
             <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]
@@ -23,12 +23,12 @@ const TradeConfidence = () => {
             </div>
           </div>
           <div>
-            <img src={goldenScale} alt="golden-cube" className='w-full max-w-[433px]' />
+            <img src={goldenScale} alt="golden-cube" className='w-full max-w-[433px] max-md:mx-auto' />
           </div>
         </div>
       </div>
       <div className="absolute inset-0 w-full h-full z-0">
-        <img src={PartnerBg} alt="partner-bg" className='w-full h-full' />
+        <img src={PartnerBg} alt="partner-bg" className='w-full h-full object-cover' />
       </div>
     </section>
   )

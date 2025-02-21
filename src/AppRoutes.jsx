@@ -5,11 +5,11 @@ import HowitWorksPage from "./pages/HowitWorksPage";
 import Affiliate from "./pages/Affiliate";
 import Payouts from "./pages/Payouts";
 
-const AppRoutes = () => {
+const AppRoutes = ({mode}) => {
     
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home mode={mode} />} />
             <Route path="/how-it-works" element={<HowitWorksPage />} />
             <Route path="/affiliate-program" element={<Affiliate />} />
             <Route path="/payouts" element={<Payouts />} />

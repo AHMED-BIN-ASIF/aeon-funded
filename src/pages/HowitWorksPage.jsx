@@ -8,6 +8,9 @@ import MasterTrading from '../components/MasterTrading'
 import TradeConfidence from '../components/TradeConfidence'
 import OneStep from '../components/OneStep'
 import Challenge from '../components/Challenge'
+import CareerTrading from '../components/CareerTrading'
+import Rules from '../components/Rules'
+import ComparePlan from '../components/ComparePlan'
 
 const HowitWorksPage = () => {
   return (
@@ -16,6 +19,9 @@ const HowitWorksPage = () => {
         <WorkBanner />
       </div>
       <MasterTrading/>
+      <CareerTrading/>
+      <Rules/>
+      <ComparePlan/>
       <Challenge/>
       <OneStep/>
       <div className="px-6 max-md:px-4">

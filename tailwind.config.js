@@ -21,6 +21,8 @@ module.exports = {
         'nav-shadow': '0px 8.867px 9.458px 0px rgba(0, 0, 0, 0.10), 0px 0.637px 3.821px 0px rgba(255, 255, 255, 0.25) inset',
         'card-inset': '0px 0px 0px 10px rgba(255, 255, 255, 0.03) inset',
         'icon-border': '0px 0px 0px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(255, 255, 255, 0.10), 0px 0.5px 0px 0px #FC0 inset',
+        'icon-light': '0px 0.5px 0px 0px #1F1F1F inset',
+        'icon-white': '0px 0px 0px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(255, 255, 255, 0.10), 0px 0.5px 0px 0px #FFF inset',
       },
       backgroundImage: {
         'card-gradient': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.08) 100%)",

@@ -22,7 +22,7 @@ function App() {
     <Router>
       <Header mode={mode} />
       <div className={mode}>
-        <AppRoutes />
+        <AppRoutes mode={mode} />
       </div>
       <Footer />
       <button 

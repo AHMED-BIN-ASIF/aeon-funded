@@ -10,13 +10,13 @@ import Reviews from "../components/Reviews";
 import JoinDiscord from "../components/JoinDiscord";
 import Faqs from "../components/Faqs";
 
-const Home = () => {
+const Home = ({mode}) => {
   return (
     <main>
       <div className="px-6 max-md:px-4">
-        <Banner />
+        <Banner mode={mode} />
       </div>
-      <AboutSection />
+      <AboutSection mode={mode} />
       <Success />
       <HowitWorks />
       <PricingPlan />

@@ -8,6 +8,7 @@ import World from "../assets/images/world.svg";
 
 const successData = [
   {
+    eybrowText:"Total Payouts",
     title: 1240000,
     suffix: "+",
     bodyClass: "px-6 max-lg:w-full",
@@ -23,6 +24,7 @@ const successData = [
     imageClass: "max-lg:w-full max-lg:object-cover"
   },
   {
+    eybrowText:"Highest Paid Trader",
     title: 18821,
     prefix: "$",
     description:
@@ -31,6 +33,7 @@ const successData = [
     layoutClass: "grid lg:grid-cols-[1fr_0.5fr] p-8",
   },
   {
+    eybrowText:"Traders Worldwide",
     title: 18000,
     suffix: "+",
     description:
@@ -73,7 +76,7 @@ const Success = () => {
     </section>
   );
 };
-const SuccessCard = ({ title, suffix, prefix, bodyClass, description, extraInfo, image, spanClass, imageClass, layoutClass }) => {
+const SuccessCard = ({eybrowText, title, suffix, prefix, bodyClass, description, extraInfo, image, spanClass, imageClass, layoutClass }) => {
     return (
       <div className={`bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset ${spanClass || ''}`}>
         <div
@@ -82,7 +85,7 @@ const SuccessCard = ({ title, suffix, prefix, bodyClass, description, extraInfo,
         >
           <div className={`${bodyClass}`}>
             <div className="relative h-7 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-2 px-[10px] border border-solid bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.20)] shadow-nav-shadow ">
-              <span className="text-[10px] font-inter text-ivoryTint">Success</span>
+              <span className="text-[10px] font-inter text-ivoryTint">{eybrowText}</span>
             </div>
             <h4 className={`text-xl leading-tight font-semibold font-inter mt-4 mb-[10px] text-white`}>
               {prefix}
