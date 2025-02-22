@@ -24,7 +24,7 @@ function App() {
       <div className={mode}>
         <AppRoutes mode={mode} />
       </div>
-      <Footer />
+      <Footer mode={mode} />
       <button 
         className={`fixed bottom-7 right-8 rounded-md p-2 z-10 text-2xl border border-opacity-10 transition-all duration-300 ease-in-out ${mode=== 'dark'? 'border-white bg-opacity-20 bg-black shadow-card-inset text-white': 'border-black bg-white bg-opacity-65 text-black'}`}
         onClick={toggleMode} // Corrected onClick

@@ -17,16 +17,16 @@ const Home = ({mode}) => {
         <Banner mode={mode} />
       </div>
       <AboutSection mode={mode} />
-      <Success />
-      <HowitWorks />
-      <PricingPlan />
-      <Secure />
-      <Benifits />
+      <Success mode={mode} />
+      <HowitWorks mode={mode} />
+      <PricingPlan mode={mode} />
+      <Secure mode={mode}/>
+      <Benifits mode={mode} />
       <div className="px-6 max-md:px-4">
-        <Reviews />
+        <Reviews mode={mode} />
       </div>
-      <Faqs />
-      <JoinDiscord/>
+      <Faqs mode={mode} />
+      <JoinDiscord mode={mode}/>
     </main>
   );
 };

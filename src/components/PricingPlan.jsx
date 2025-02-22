@@ -3,7 +3,7 @@ import Eyebrow from "../ui/Eyebrow";
 import { Link } from "react-router-dom";
 import Check from "../assets/icons/check-circle.svg"
 
-const PricingPlan = () => {
+const PricingPlan = ({mode}) => {
   const [activeTab, setActiveTab] = useState('One phase');
   const [BtmactiveTab, setBtmActiveTab] = useState('Phase 1');
 
@@ -52,19 +52,20 @@ const PricingPlan = () => {
     <section
       className="py-[120px] bg-cover bg-no-repeat bg-center max-xl:py-20"
       style={{
-        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
-        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
-        0px -173.5px / 100% 145.749% no-repeat`
+        background: mode==='dark'
+        ? "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -173.5px / 100% 145.749% no-repeat"
+        : ""
       }}
     >
       <div className="container max-w-[900px]">
         <div className="text-center flex items-center flex-col">
           <Eyebrow text="Planning" />
-          <h2 className="text-white text-[50px] leading-relaxed font-semibold tracking-[-0.5px] 
-          max-lg:text-4xl">
+          <h2 className={`text-[50px] leading-relaxed font-semibold tracking-[-0.5px] 
+          max-lg:text-4xl ${mode==='dark'?'text-white ':'text-dark1f'}`}>
             Pricing Plan
           </h2>
-          <p className="text-sm leading-[1.71] text-ivoryTint max-w-[644px] mx-auto mt-[10px]">
+          <p className={`text-sm leading-[1.71] max-w-[644px] mx-auto mt-[10px]
+            ${mode==='dark'?'text-ivoryTint ':'text-dark1f opacity-80'}`}>
           We appreciate that every trader and trading style is different. With that in mind we offer the opportunity to customize your trading accounts at the checkout.
           </p>
         </div>
@@ -75,7 +76,9 @@ const PricingPlan = () => {
             key={tab.name}
             className={`px-8 py-[10px] h-12 rounded-[100px] flex items-center justify-center transition-all duration-500 ease-in-out
               font-inter text-sm leading-none font-semibold max-md:w-full
-              ${activeTab === tab.name ? 'bg-white text-black' : 'text-white bg-transparent'}`}
+              ${activeTab === tab.name 
+                ? (mode === 'dark' ? 'bg-white text-black' : 'bg-dark1f text-white') 
+                : (mode === 'dark' ? 'text-white bg-transparent' : 'text-dark1f')}}`}
             onClick={() => setActiveTab(tab.name)}
           >
             {tab.name}

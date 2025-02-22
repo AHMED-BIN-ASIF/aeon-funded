@@ -25,7 +25,7 @@ const faqsData = [
   },
 ];
 
-const Faqs = () => {
+const Faqs = ({mode}) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -36,9 +36,9 @@ const Faqs = () => {
     <section
       className="py-[120px] max-xl:py-20 max-md:py-10"
       style={{
-        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
-        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
-        0px -173.5px / 100% 145.749% no-repeat`,
+        background: mode==='dark' ? 
+        "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -173.5px / 100% 145.749% no-repeat"
+        :"",
       }}
     >
       <div className="container max-w-[1240px]">
@@ -46,28 +46,34 @@ const Faqs = () => {
         max-lg:grid-cols-1">
           <div className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
             <Eyebrow text="FAQ" />
-            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px] 
-            max-lg:text-4xl">
+            <h2 className={`text-[50px] leading-tight font-semibold tracking-[-0.5px] 
+            max-lg:text-4xl
+            ${mode==='dark'? 'text-white': 'text-dark1f'}`}>
               Frequently Asked Questions
             </h2>
-            <p className="text-sm leading-[1.71] text-ivoryTint max-w-[344px] mt-[10px]">
+            <p className={`text-sm leading-[1.71]  max-w-[344px] mt-[10px]
+            ${mode==='dark'? 'text-ivoryTint': 'text-dark1f opacity-80'}`}>
               Have questions? Our FAQ section has you covered with
               quick answers to the most common inquiries.
             </p>
           </div>
-          <div className="bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] flex flex-col gap-[10px]">
+          <div className={`p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] flex flex-col gap-[10px]
+          ${mode==='dark'? 'bg-black ': 'bg-[#F1F1F1]'}`}>
             {faqsData.map((faq, index) => (
               <div
                 key={index}
-                className="rounded-[20px] p-8 border border-solid border-[rgba(255,255,255,0.20)] flex flex-col justify-between items-start
-                max-lg:p-5"
+                className={`rounded-[20px] p-8 border border-solid border-[rgba(255,255,255,0.20)] flex flex-col justify-between items-start
+                max-lg:p-5`}
                 style={{
-                  background: "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.04) 100%), rgba(0, 0, 0, 0.20)"
+                  background: mode==='dark'?
+                  "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.04) 100%), rgba(0, 0, 0, 0.20)"
+                  :"#fff"
                 }}
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex justify-between items-center text-white text-left font-inter text-lg leading-none"
+                  className={`w-full flex justify-between items-center  text-left font-inter text-lg leading-none
+                    ${mode==='dark' ? 'text-white' : 'text-dark1f'}`}
                 >
                   <span>{faq.question}</span>
                   <span className="text-[24px] leading-[0.9] font-light">
@@ -83,7 +89,8 @@ const Faqs = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="text-sm font-inter text-ivoryTint pt-2">
+                  <div className={`text-sm font-inter pt-2
+                    ${mode==='dark'? 'text-ivoryTint':'text-dark1f'}`}>
                     {faq.answer}
                   </div>
                 </motion.div>

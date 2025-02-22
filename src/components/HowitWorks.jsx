@@ -29,14 +29,14 @@ const aboutCards = [
   },
 ];
 
-const HowitWorks = () => {
+const HowitWorks = ({mode}) => {
   return (
     <section
       className="pt-[205px] pb-[120px] max-xl:pt-36 max-xl:pb-20 max-md:py-10"
       style={{
-        background: `radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), 
-        linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  
-        0px -173.5px / 100% 145.749% no-repeat`,
+        background: mode==='dark'
+        ? "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  0px -173.5px / 100% 145.749% no-repeat"
+        : ""
       }}
     >
       <div className="container max-w-[1240px]">
@@ -44,21 +44,23 @@ const HowitWorks = () => {
         max-lg:grid-cols-1">
           <div className="max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center ">
             <Eyebrow text="How it works" theme="white" />
-            <h2 className="text-white text-[50px] leading-tight font-semibold tracking-[-0.5px]
-            max-lg:text-4xl">
-              Trading made <span className="text-primary">easy</span>, For You.
+            <h2 className={`text-[50px] leading-tight font-semibold tracking-[-0.5px]
+            max-lg:text-4xl ${mode==='dark'?'text-white ':'text-dark1f'}`}>
+              Trading made <span className={`${mode==='dark'?'text-primary ':'text-dark1f'}`}>easy</span>, For You.
             </h2>
-            <p className="text-sm leading-[1.71] text-ivoryTint  mx-auto mt-[10px]">
+            <p className={`text-sm leading-[1.71] mx-auto mt-[10px]
+              ${mode==='dark'?'text-ivoryTint ':'text-dark1f opacity-80'}`}>
               Your Skills with Our Risk. You're not liable for any losses.
             </p>
             <div className="flex gap-[10px] mt-8 max-lg:justify-center">
-              <Button to="/" text="Get Funded" />
+              <Button to="/" text="Get Funded" mode={mode} />
               <Button
                 to="/"
                 text="Learn More"
                 variant="gold"
                 hasIcon={true}
                 icon={ArrowRight}
+                mode={mode}
               />
             </div>
           </div>
@@ -72,28 +74,36 @@ const HowitWorks = () => {
           {aboutCards.map((card, index) => (
             <div
               key={index}
-              className="bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset"
+              className={`p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset
+                ${mode==='dark'? 'bg-black ': 'bg-[#F1F1F1]'}`}
             >
-              <div className="relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start bg-card-gradient">
+              <div className={`relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start 
+                ${mode==='dark'? 'bg-card-gradient ': 'bg-white'}`}>
                 <div>
                   <div className="flex justify-between items-center">
-                    <div className="p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-[rgba(255,204,0,0.04)] shadow-icon-border">
-                      <img src={card.icon} alt={card.title} />
+                    <div className={`p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] 
+                    ${mode==='dark'? 'shadow-icon-border bg-[rgba(255,204,0,0.04)]' : 'shadow-icon-light bg-[rgba(31,31,31,0.04)]'}`}>
+                      <img src={card.icon} alt={card.title} className={`${mode==='dark'? '': 'filter invert'}`} />
                     </div>
-                    <span className="text-[10px] font-inter text-ivoryTint relative h-7 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-2 px-[10px] border border-solid bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.20)] shadow-nav-shadow">
+                    <span className={`text-[10px] font-inter  relative h-7 max-w-max flex items-center justify-center gap-2 rounded-[100px] py-2 px-[10px] border border-solid  border-[rgba(255,255,255,0.20)] 
+                      ${mode==='dark'? 'text-ivoryTint bg-[rgba(255,255,255,0.01)] shadow-nav-shadow': ' text-dark1f bg-[#F1F1F1]'}`}>
                     {card.index} Step
                     </span>
                   </div>
-                  <h4 className="text-white text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]">
+                  <h4 className={`text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]
+                  ${mode==='dark'?'text-white ':'text-dark1f'}`}>
                     {card.title}
                   </h4>
-                  <p className="text-ivoryTint text-sm leading-[1.7] font-inter">
+                  <p className={`text-sm leading-[1.7] font-inter
+                  ${mode==='dark'?'text-ivory-Tint ':'text-dark1f opacity-80'}`}>
                     {card.description}
                   </p>
                 </div>
                 {/* card-lines */}
-                <div className="absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line"></div>
-                <div className="absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line"></div>
+                <div className={`absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line 
+                ${mode==='dark'? '': 'opacity-0'}`}></div>
+                <div className={`absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line 
+                  ${mode==='dark'? '': 'opacity-0'}`}></div>
               </div>
             </div>
           ))}
