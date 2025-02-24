@@ -11,7 +11,7 @@ const Banner = ({mode}) => {
 
   return (
     <section
-      className="relative pt-[175px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden"
+      className="relative pt-[100px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden"
       style={{
         background: mode==='dark'
           ? ""
@@ -21,7 +21,7 @@ const Banner = ({mode}) => {
       <div className="container max-w-[1642px] relative z-[3]">
         <div className="grid grid-cols-2 items-center gap-10 max-xl:gap-7 max-lg:grid-cols-1">
           <div className="flex flex-col items-start">
-            <Eyebrow imageSrc={Star} text="Rated 10/10 From 1000+ Users" theme={`${mode==='dark'? 'golden' : 'light'}`} />
+            <Eyebrow imageSrc={Star} text="Rated 10/10 From 800+ Users" theme={`${mode==='dark'? 'golden' : 'light'}`} />
             <h1
               className={`text-[80px] font-semibold leading-[1.12] tracking-[-1.6px]  max-xl:text-[56px] max-lg:text-4xl ${
                 mode==='dark' ? "text-white" : "text-dark1f"

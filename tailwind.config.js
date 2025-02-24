@@ -25,6 +25,7 @@ module.exports = {
         'icon-white': '0px 0px 0px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(255, 255, 255, 0.10), 0px 0.5px 0px 0px #FFF inset',
         'darkRadial': "0px -106px 84px 0px #FC0 inset, 0px -36px 44px 0px #FC0 inset",
         'lightRadial': "0px -106px 84px 0px #1F1F1F inset, 0px -36px 44px 0px #1F1F1F inset",
+        
       },
       backgroundImage: {
         'card-gradient': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.08) 100%)",
@@ -32,6 +33,7 @@ module.exports = {
         'card-line': "linear-gradient(90deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.60) 50%, rgba(255, 204, 0, 0.00) 100%)",
         'review-card': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.10) 100%)",
         'plan-card': "radial-gradient(64.95% 117.28% at 71.88% 76.72%, rgba(255, 210, 33, 0.20) 0%, rgba(255, 210, 33, 0.00) 100%)",
+        'edu-card': "linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%)",
       },
     },
   },

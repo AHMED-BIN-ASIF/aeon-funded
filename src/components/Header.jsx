@@ -16,7 +16,7 @@ const Header = ({mode}) => {
   ];
 
   return (
-    <header className="absolute left-0 right-0 top-0 w-full z-10 py-4">
+    <header className=" left-0 right-0 top-0 w-full z-10 py-4">
       <div className="container max-w-[1832px]">
         <div className="flex items-center justify-between gap-5 xl:gap-[60px]">
           {/* Brand */}

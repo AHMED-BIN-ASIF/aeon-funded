@@ -28,25 +28,31 @@ const payoutCards = [
       description: "Our Dedicated Support team is always here to help.",
     },
   ];
-const PayoutBanner = () => {
+const PayoutBanner = ({mode}) => {
   return (
     <section
-      className="relative pt-[275px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden min-h-[100vh] flex items-center
-      max-2xl::pt-[220px] max-xl:pt-[170px]"
+      className="relative pt-[160px] pb-[100px] rounded-[0_0_40px_40px] overflow-hidden md:min-h-[calc(100vh-100px)]  flex items-center
+      max-2xl::pt-[120px] max-xl:pt-[100px]"
+      style={{
+        background: mode==='dark'
+          ? ""
+          : "radial-gradient(165.19% 140% at 50% 10%, rgba(255, 255, 255, 0.00) 37.41%, #000 69.27%, #000 100%)",
+      }}
     >
       <div className="container max-w-[1240px] relative z-[3]">
           <div className="flex flex-col items-center justify-center text-center mb-14">
           <Eyebrow text="Payouts" theme="golden" />
-            <h1 className="text-[80px] font-semibold leading-[1.12] tracking-[-1.6px] text-white 
-            max-xl:text-[56px] max-lg:text-4xl">
+            <h1 className={`text-[80px] font-semibold leading-[1.12] tracking-[-1.6px]  
+            max-xl:text-[56px] max-lg:text-4xl ${mode==='dark'?'text-white':'text-dark1f'}`}>
               Glimpse Of Successful AEON Trading Stories
             </h1>
-            <p className="text-base text-[#FBF6EC] m-[16px_0_32px] max-w-[631px]">
+            <p className={`text-base  m-[16px_0_32px] max-w-[631px] ${mode==='dark'?'text-[#FBF6EC]':'text-dark1f'}`}>
             Help AeonFunded grow and earn up to 20% commission – There’s no limit on how much you can earn profit!
             </p>
             <Link
               to="/"
-              className="btn bg-white text-[16px] font-inter font-medium leading-none shadow-nav-shadow rounded-[100px] text-black h-10 px-8 py-4 flex items-center justify-center"
+              className={`btn text-[16px] font-inter font-medium leading-none shadow-nav-shadow rounded-[100px] h-10 px-8 py-4 flex items-center justify-center
+                ${mode==='dark'?'text-black bg-white ':'text-white bg-black'}`}
             >
               Get Funded
             </Link>
@@ -57,33 +63,37 @@ const PayoutBanner = () => {
           {payoutCards.map((card, index) => (
             <div
               key={index}
-              className="bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset"
+              className={` p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] 
+              shadow-card-inset ${mode==='dark'?'bg-black':' bg-[#F1F1F1]'}`}
             >
-              <div className="relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start bg-card-gradient">
+              <div className={`relative p-6 h-full rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] flex flex-col gap-5 justify-between items-start 
+               ${mode==='dark'?'bg-card-gradient':'bg-white'}`}>
                 <div>
-                    <div className="p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-[rgba(255,204,0,0.04)] shadow-icon-border">
-                      <img src={card.icon} alt={card.title} />
+                    <div className={`p-3 flex items-center justify-center rounded-full w-[50px] h-[50px] 
+                       ${mode==='dark'?'bg-[rgba(255,204,0,0.04)] shadow-icon-border':'shadow-icon-light bg-[#F1F1F1]'}`}>
+                      <img src={card.icon} alt={card.title} className={`${mode==='dark'?'':'filter invert'}`} />
                     </div>
-                  <h4 className="text-white text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]">
+                  <h4 className={` text-xl leading-tight font-semibold font-inter mt-4 mb-[10px]
+                    ${mode==='dark'?'text-white':'text-dark1f'}`}>
                     {card.title}
                   </h4>
-                  <p className="text-ivoryTint text-sm leading-[1.7] font-inter">
+                  <p className={` text-sm leading-[1.7] font-inter ${mode==='dark'?'text-ivoryTint':'text-dark1f'}`}>
                     {card.description}
                   </p>
                 </div>
                 {/* card-lines */}
-                <div className="absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line"></div>
-                <div className="absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line"></div>
+                <div className={`absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line ${mode==='dark'?'':'opacity-0'}`}></div>
+                <div className={`absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line ${mode==='dark'?'':'opacity-0'}`}></div>
               </div>
             </div>
           ))}
         </div>
       </div>
       <div className="absolute inset-0 w-full h-full">
-        <img src={Texture} alt="texture" className="w-full h-full" />
+        <img src={Texture} alt="texture" className={`w-full h-full ${mode==='dark'?'':'filter invert grayscale'}`} />
       </div>
       <div className="absolute inset-0 w-full h-full">
-      <img src={BannerGradient} alt="BannerGradient" className="w-full h-full object-cover object-bottom " />
+      <img src={BannerGradient} alt="BannerGradient" className={`w-full h-full object-cover object-bottom ${mode==='dark'?'':'opacity-0'}`} />
       </div>
     </section>
   );

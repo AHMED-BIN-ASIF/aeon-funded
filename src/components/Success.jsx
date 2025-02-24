@@ -118,7 +118,7 @@ const SuccessCard = ({eybrowText, title, suffix, prefix, bodyClass, description,
                 ))}
               </div>
             )}
-            <img src={image} alt="Success" className={`${imageClass} || ${mode === 'dark' ? '' : 'filter grayscale'} w-full h-auto max-h-[234px]`}  />
+            <img src={image} alt="Success" className={`${imageClass} || ${mode === 'dark' ? '' : 'filter grayscale invert'} w-full h-auto max-h-[234px]`}  />
           </div>
         </div>
       </div>

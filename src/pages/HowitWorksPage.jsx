@@ -12,24 +12,24 @@ import CareerTrading from '../components/CareerTrading'
 import Rules from '../components/Rules'
 import ComparePlan from '../components/ComparePlan'
 
-const HowitWorksPage = () => {
+const HowitWorksPage = ({mode}) => {
   return (
     <main>
       <div className="px-6 max-md:px-4">
-        <WorkBanner />
+        <WorkBanner mode={mode}/>
       </div>
-      <MasterTrading/>
-      <CareerTrading/>
-      <Rules/>
-      <ComparePlan/>
-      <Challenge/>
-      <OneStep/>
+      <MasterTrading mode={mode}/>
+      <CareerTrading mode={mode}/>
+      <Rules mode={mode}/>
+      <ComparePlan mode={mode}/>
+      <Challenge mode={mode}/>
+      <OneStep mode={mode}/>
       <div className="px-6 max-md:px-4">
-      <TradeConfidence/>
-        <Reviews />
+      <TradeConfidence mode={mode}/>
+        <Reviews mode={mode} />
       </div>
-      <Faqs />
-      <JoinDiscord/>
+      <Faqs mode={mode} />
+      <JoinDiscord mode={mode}/>
     </main>
   )
 }

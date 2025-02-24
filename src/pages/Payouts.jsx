@@ -6,19 +6,19 @@ import JoinDiscord from '../components/JoinDiscord'
 import PayoutBanner from '../components/PayoutBanner'
 import Statistics from '../components/Statistics'
 
-const Payouts = () => {
+const Payouts = ({mode}) => {
   return (
     <main>
         <div className="px-6 max-md:px-4">
-        <PayoutBanner />
+        <PayoutBanner mode={mode} />
       </div>
-      <Statistics/>
+      <Statistics mode={mode}/>
       <div className="px-6 max-md:px-4">
-      <Partner />
-        <Reviews />
+      <Partner mode={mode} />
+        <Reviews mode={mode} />
       </div>
-      <Faqs />
-      <JoinDiscord/>
+      <Faqs mode={mode} />
+      <JoinDiscord mode={mode}/>
     </main>
   )
 }

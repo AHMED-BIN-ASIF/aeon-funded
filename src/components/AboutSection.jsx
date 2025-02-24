@@ -73,7 +73,7 @@ const AboutSection = ({mode}) => {
                     {card.description}
                   </p>
                 </div>
-                <Button to="/" text="Learn More" variant={`${mode==='dark'? 'gold': 'light'}`} size="small" hasIcon={true} icon={ArrowRight} />
+                <Button to="/" text="Learn More" variant='gold' size="small" hasIcon={true} icon={ArrowRight} mode={mode} />
                 {/* card-lines */}
                 <div className={`absolute top-[-1px] right-[35px] w-[114px] h-[1px] bg-card-line ${mode==='dark'? '': 'hidden'}`}></div>
                 <div className={`absolute bottom-[-1px] left-[35px] w-[114px] h-[1px] bg-card-line ${mode==='dark'? '': 'hidden'}`}></div>

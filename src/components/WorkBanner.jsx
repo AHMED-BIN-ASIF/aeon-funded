@@ -3,12 +3,13 @@ import Star from "../assets/icons/star.svg";
 import WorkBg from "../assets/images/work-bg.png";
 import Texture from "../assets/images/texture.svg";
 import BannerGradient from "../assets/images/banner-gradient.svg";
+import BannerGradientBlack from "../assets/images/htw-bg.svg";
 import { Link } from "react-router-dom";
 import Eyebrow from "../ui/Eyebrow";
-const WorkBanner = () => {
+const WorkBanner = ({mode}) => {
   return (
     <section
-      className="relative pt-[275px] pb-[200px] rounded-[0_0_40px_40px] overflow-hidden max-md:pt-[200px]"
+      className="relative bg-black pt-[200px] pb-[200px] rounded-[40px] overflow-hidden max-md:pt-[150px]"
     >
       <div className="container max-w-[1642px]">
         <div className="grid grid-cols-2 items-center gap-10
@@ -38,7 +39,7 @@ const WorkBanner = () => {
         <img src={Texture} alt="texture" className="w-full h-full" />
       </div>
       <div className="absolute inset-0 w-full h-full z-[3]">
-      <img src={BannerGradient} alt="BannerGradient" className="w-full h-full object-cover object-bottom " />
+      <img src={mode==='dark'? BannerGradient:BannerGradientBlack} alt="BannerGradient" className="w-full h-full object-cover object-bottom " />
       </div>
     </section>
   );

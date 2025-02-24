@@ -71,53 +71,61 @@ const rulesData = [
   },
 ];
 
-const Rules = () => {
+const Rules = ({mode}) => {
   return (
     <section
       className="py-[120px] max-xl:py-[80px]  max-md:py-10"
       style={{
-        background: `
-            radial-gradient(150.94% 139.8% at 60.26% 151.92%, rgba(0, 0, 0, 0.00) 0%, #000 100%),
-            linear-gradient(360deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),
-            0px -41.5px / 100% 109.422% no-repeat`,
+        background: mode==='dark'
+        ?"radial-gradient(150.94% 139.8% at 60.26% 151.92%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(360deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -41.5px / 100% 109.422% no-repeat"
+        : ""
       }}
     >
       <div className="container max-w-[1240px]">
         <div className="text-center max-w-[842px] mx-auto flex items-center flex-col">
-          <Eyebrow text="Success" />
-          <h2 className="text-white text-[50px] leading-none font-semibold tracking-[-0.5px]
-          max-lg:text-4xl">
-            Trading <span className="text-primary">Success</span> in Numbers
+          <Eyebrow text="Rules" />
+          <h2 className={`text-[50px] leading-none font-semibold tracking-[-0.5px]
+          max-lg:text-4xl ${mode==='dark'?'text-white':'text-dark1f'}`}>
+            Trading <span className={`${mode==='dark'?'text-primary':'text-dark1f'}`}>Success</span> in Numbers
           </h2>
-          <p className="text-sm leading-[1.71] text-ivoryTint max-w-[540px] mx-auto mt-[10px]">
+          <p className={`text-sm leading-[1.71] max-w-[540px] mx-auto mt-[10px]
+            ${mode==='dark'?'text-ivoryTint':'text-dark1f'}`}>
             A dynamic community where traders grow, earn, and succeed. See real results and take your trading journey to the next level.
           </p>
         </div>
         <div className="grid grid-cols-12 gap-6 mt-[60px]
         max-md:grid-cols-1">
           {rulesData.map((data, index) => (
-            <RulesCard key={index} {...data} />
+            <RulesCard key={index} {...data} mode={mode} />
           ))}
         </div>
       </div>
     </section>
   );
 };
-const RulesCard = ({ title, suffix, prefix, bodyClass, description, extraInfo, image, spanClass, imageClass, layoutClass }) => {
+const RulesCard = ({ title, suffix, prefix, bodyClass, description, extraInfo, image, spanClass, imageClass, layoutClass,mode }) => {
     return (
-      <div className={`bg-black p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset ${spanClass || ''}`}>
+      <div className={`p-[10px] rounded-[24px] border border-solid border-[rgba(255,255,255,0.06)] shadow-card-inset
+      ${mode==='dark'?'bg-black':'bg-[#F1F1F1]'} ${spanClass || ''}`}>
         <div
-          className={`relative h-full text-center rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] ${layoutClass} gap-5 items-center overflow-hidden bg-card-radial`}
+          className={`relative h-full text-center rounded-[18px] border border-solid border-[rgba(255,255,255,0.10)] ${layoutClass} gap-5 items-center overflow-hidden
+          ${mode==='dark'?'bg-card-radial':'bg-white'} `}
           style={{ backdropFilter: "blur(7.5px)" }}
         >
           <div className={`${bodyClass}`}>
-            <h4 className={`text-2xl leading-tight font-semibold font-inter mt-4 mb-[10px] text-white`}>
+            <h4 className={`text-2xl leading-tight font-semibold font-inter mt-4 mb-[10px] 
+              ${mode==='dark'?'text-white':'text-dark1f'}`}>
               {title}
             </h4>
-            <p className="text-ivoryTint text-sm leading-[1.7] font-segoe">{description}</p>
+            <p className={` text-sm leading-[1.7] font-segoe
+              ${mode==='dark'?'text-ivoryTint':'text-dark1f'}`}>{description}</p>
           </div>
           <div className="max-lg:w-full">
-            <img src={image} alt="Success" className={imageClass || "w-full h-auto max-h-[234px]"} />
+          <img 
+            src={image} 
+            alt="Success" 
+            className={`${imageClass ? imageClass : 'w-full h-auto max-h-[234px]'} ${mode === 'dark' ? '' : 'filter invert grayscale'}`} 
+          />
           </div>
           <div className="absolute top-[0] right-0 left-0 mx-auto w-[60%] h-[1px] bg-card-line"></div>
                 <div className="absolute bottom-[0px] left-0 right-0 mx-auto w-[60%] h-[1px] bg-card-line"></div>
