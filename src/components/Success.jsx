@@ -1,7 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
 import Eyebrow from "../ui/Eyebrow";
-// import AboutBg from "../assets/images/about-bg.webp";
+import SccessBg from "../assets/images/success-bg.webp";
 import Payout from "../assets/images/payout-chart.svg";
 import PaidChart from "../assets/images/bar-chart.svg";
 import World from "../assets/images/world.svg";
@@ -10,6 +10,7 @@ const successData = [
   {
     eybrowText:"Total Payouts",
     title: 1240000,
+    prefix: "$",
     suffix: "+",
     bodyClass: "px-6 max-lg:w-full",
     description:
@@ -49,10 +50,11 @@ const Success = ({mode}) => {
     <section
       className="py-[120px] max-xl:py-[80px]  max-md:py-10"
       style={{
-        background: mode==='dark'?
-            "radial-gradient(150.94% 139.8% at 60.26% 151.92%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(360deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -41.5px / 100% 109.422% no-repeat" 
-            :""
+        background: mode === "dark"
+          ? `url(${SccessBg}) no-repeat center / cover`
+          : ""
       }}
+      
     >
       <div className="container max-w-[1240px]">
         <div className="text-center max-w-[842px] mx-auto flex items-center flex-col">

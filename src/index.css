@@ -20,7 +20,7 @@ body.dark {
   background: #000;
   color: #fff;
 }
-body,light {
+body.light {
   background: #fff;
   color: #000;
 }
@@ -37,6 +37,12 @@ body::-webkit-scrollbar-thumb {
   background: var(--Gradient-5,
       linear-gradient(180deg, #FC0  0%, #FC0  100%));
   outline: 0.5px solid #000;
+  border-radius: 30px;
+}
+body.light::-webkit-scrollbar-thumb {
+  background: var(--Gradient-5,
+      linear-gradient(180deg, #f1f1f1  0%, #f1f1f1  100%));
+  outline: 0.5px solid #c4c4c4;
   border-radius: 30px;
 }
 h1, h2, h3, h4, h5, h6, p, a, ul, ol {
@@ -63,3 +69,6 @@ img {
   width: 90%;
 }
 /* global css end */
+.btn-wrp a {
+  justify-content: space-between !important;
+}

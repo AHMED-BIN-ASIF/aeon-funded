@@ -34,6 +34,8 @@ module.exports = {
         'review-card': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.10) 100%)",
         'plan-card': "radial-gradient(64.95% 117.28% at 71.88% 76.72%, rgba(255, 210, 33, 0.20) 0%, rgba(255, 210, 33, 0.00) 100%)",
         'edu-card': "linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%)",
+        'tier': "linear-gradient(180deg, rgba(255, 204, 0, 0.00) 0%, rgba(255, 204, 0, 0.08) 100%)",
+        'stats': "radial-gradient(64.95% 117.28% at 71.88% 76.72%, rgba(255, 210, 33, 0.20) 0%, rgba(255, 210, 33, 0.00) 100%)",
       },
     },
   },

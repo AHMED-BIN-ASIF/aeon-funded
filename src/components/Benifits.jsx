@@ -1,6 +1,7 @@
 import React from "react";
 import Eyebrow from "../ui/Eyebrow";
 // import AboutBg from "../assets/images/about-bg.webp";
+import BenifitBg from "../assets/images/benifit-bg.svg";
 import Verified from "../assets/icons/shield-warning.png";
 import Easy from "../assets/icons/hart-arrow-up.png";
 import Clock from "../assets/icons/clock-circle.png";
@@ -53,9 +54,9 @@ const Benifits = ({mode}) => {
     <section
       className="py-32 bg-cover bg-no-repeat bg-center max-xl:py-24"
       style={{
-        background: mode==='dark'?
-        "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%),  0px -173.5px / 100% 145.749% no-repeat"
-        :""
+        background: mode === "dark"
+          ? `url(${BenifitBg}) no-repeat center / cover`
+          : ""
       }}
     >
       <div className="container max-w-[1240px]">

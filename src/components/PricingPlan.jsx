@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Eyebrow from "../ui/Eyebrow";
 import { Link } from "react-router-dom";
 import Check from "../assets/icons/check-circle.svg";
+import PricingBg from "../assets/images/pricing-bg.svg";
 
 const PricingPlan = ({ mode }) => {
   const [activeTab, setActiveTab] = useState("One phase");
@@ -52,10 +53,9 @@ const PricingPlan = ({ mode }) => {
     <section
       className="py-[120px] bg-cover bg-no-repeat bg-center max-xl:py-20"
       style={{
-        background:
-          mode === "dark"
-            ? "radial-gradient(59.12% 34.61% at 85.31% 52.01%, rgba(0, 0, 0, 0.00) 0%, #000 100%), linear-gradient(300deg,  rgba(0, 0, 0, 0.5) 0%, rgba(255, 204, 0, 0.5) 100%), 0px -173.5px / 100% 145.749% no-repeat"
-            : "",
+        background: mode === "dark"
+          ? `url(${PricingBg}) no-repeat center / cover`
+          : ""
       }}
     >
       <div className="container max-w-[900px]">

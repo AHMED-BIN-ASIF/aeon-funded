@@ -1,12 +1,18 @@
 import React from 'react'
 import Skill from '../assets/icons/wave.svg'
 import JoinBg from '../assets/images/join-bg.svg'
+import DiscordBg from '../assets/images/discord-bg.svg'
 import Button from '../ui/Button'
 import Eyebrow from '../ui/Eyebrow'
 
 const JoinDiscord = ({mode}) => {
   return (
-    <section className="py-[120px] max-xl:py-20">
+    <section className="py-[120px] max-xl:py-20"
+    style={{
+      background: mode === "dark"
+        ? `url(${DiscordBg}) no-repeat center / cover`
+        : ""
+    }}>
       <div className="container max-w-[1004px]">
         <div className="relative min-h-[768px] flex items-center justify-center
         max-lg:min-h-[500px] max-md:min-h-[300px]">
