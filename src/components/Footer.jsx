@@ -26,6 +26,11 @@ const navLinks = [
   { name: 'Affiliate Program', path: '/affiliate-program' },
   { name: 'FAQ', path: 'http://Help.Aeonfunded.com' , target: '_blank' },
 ];
+const policyLinks = [
+  { name: 'Terms and Conditions', path: '/terms' },
+  { name: 'Privacy Policy', path: '/privacy-policy' },
+  { name: 'Refund Policy', path: '/refund-policy' },
+];
 
 const Footer = ({ mode }) => {
   // Handles smooth scrolling for hash links
@@ -95,7 +100,22 @@ const Footer = ({ mode }) => {
             </li>
           ))}
         </ul>
-
+        <ul className="flex items-center my-8 gap-[10px] justify-center max-md:flex-col">
+  {policyLinks.map((nav, index) => (
+    <li key={index}>
+      <Link
+        to={nav.path}
+        target={nav.target}
+        onClick={(e) => handleNavClick(e, nav.path)}
+        className={`font-inter opacity-80 p-[10px] max-md:py-0 text-sm ${
+          mode === "dark" ? "text-ivoryTint" : "text-dark1f"
+        }`}
+      >
+        {nav.name}
+      </Link>
+    </li>
+  ))}
+</ul>
         <span
           className={`text-base font-inter text-center block opacity-80 ${
             mode === "dark" ? "text-ivoryTint" : "text-dark1f"
