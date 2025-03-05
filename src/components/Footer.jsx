@@ -5,8 +5,8 @@ import FooterGradient from '../assets/images/footer-gradient.svg';
 import Line from '../assets/images/line.svg';
 import FooterBrand from '../assets/images/brand.svg';
 import FooterbrandLight from '../assets/images/brand-light.svg';
-// import Powered from '../assets/icons/powered.svg';
-// import Propicks from '../assets/icons/propicks.svg';
+import Powered from '../assets/icons/powered.svg';
+import Propicks from '../assets/icons/propicks.svg';
 
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF, FaDiscord } from 'react-icons/fa';
@@ -124,10 +124,10 @@ const Footer = ({ mode }) => {
           © 2025 AeonFunded. All rights reserved.
         </span>
       </div>
-        {/* <div className="flex gap-1.5 items-center absolute right-[5%] bottom-[10%] z-10 max-md:relative max-md:mx-auto max-md:mt-2 max-md:justify-center max-md:inset-0">
-          <img src={Powered} alt="powered" className={`max-xl:max-w-[150px] max-lg:max-w-[100px] ${mode==="dark" ? "" :"filter invert"}`} />
-          <img src={Propicks} alt="propicks" className={`max-lg:max-w-[30px]`} />
-        </div> */}
+        <div className=" hidden lg:flex gap-1.5 items-center absolute right-[5%] bottom-[10%] z-10 max-md:relative max-md:mx-auto max-md:mt-2 max-md:justify-center max-md:inset-0">
+          <img src={Powered} alt="powered" className={`max-w-[90px] ${mode==="dark" ? "" :"filter invert"}`} />
+          <img src={Propicks} alt="propicks" className={`max-w-[25px]`} />
+        </div>
 
       {/* Footer Backgrounds */}
       <div className={`absolute w-full h-full inset-0 z-[1] ${mode === "dark" ? "" : "opacity-0"}`}>
